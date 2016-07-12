@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="action_settings" translatable="false">设置</string>
+    <string name="button_string">按钮</string>
+    <string name="input_def">你要说的话</string>
+    <string name="text_def">你说过的话</string>
+</resources>
