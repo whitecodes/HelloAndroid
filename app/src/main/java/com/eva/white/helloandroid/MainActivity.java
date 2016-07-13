@@ -40,6 +40,7 @@ public class MainActivity extends AppCompatActivity {
 
         // 为 button 设置 OnClickListener
         button.setOnClickListener(new View.OnClickListener(){
+            @Override
             public void onClick(View view){
                 textView.setText(editText.getText());
             }
