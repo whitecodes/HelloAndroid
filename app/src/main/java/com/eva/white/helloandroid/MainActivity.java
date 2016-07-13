@@ -8,8 +8,15 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
+
+    private TextView textView;
+    private Button button;
+    private EditText editText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +31,17 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
+            }
+        });
+
+        textView = (TextView) findViewById(R.id.textView);
+        button = (Button)findViewById(R.id.button);
+        editText = (EditText)findViewById(R.id.editText);
+
+        // 为 button 设置 OnClickListener
+        button.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View view){
+                textView.setText(editText.getText());
             }
         });
     }
