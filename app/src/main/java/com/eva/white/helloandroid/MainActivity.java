@@ -10,11 +10,8 @@ import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-
-import static com.eva.white.helloandroid.R.id.editText;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -31,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
 
         textView = (TextView) findViewById(R.id.textView);
         editView = (TextInputLayout) findViewById(R.id.editView);
-        editText=(EditText) editView.findViewById(R.id.editText);
+        editText = (EditText) editView.findViewById(R.id.editText);
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
