@@ -3,19 +3,23 @@ package com.eva.white.helloandroid;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.View;
+import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import static com.eva.white.helloandroid.R.id.editText;
+
 public class MainActivity extends AppCompatActivity {
 
     private TextView textView;
-    private Button button;
+    private TextInputLayout editView;
     private EditText editText;
 
     @Override
@@ -24,6 +28,10 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        textView = (TextView) findViewById(R.id.textView);
+        editView = (TextInputLayout) findViewById(R.id.editView);
+        editText=(EditText) editView.findViewById(R.id.editText);
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -34,17 +42,15 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        textView = (TextView) findViewById(R.id.textView);
-        button = (Button)findViewById(R.id.button);
-        editText = (EditText)findViewById(R.id.editText);
-
-        // 为 button 设置 OnClickListener
-        button.setOnClickListener(new View.OnClickListener(){
+        // 给回车键添加事件
+        editText.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
-            public void onClick(View view){
+            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
                 textView.setText(editText.getText());
+                return false;
             }
         });
+
     }
 
     @Override
